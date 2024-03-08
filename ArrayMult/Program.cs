@@ -1,45 +1,48 @@
 ﻿using System;
 using System.Globalization;
 
-class ArrayMult
+namespace ArrayMult
 {
-    static void Main(string[] args)
+    class ArrayMult
     {
-        if (args.Length != 6)
+        static void Main(string[] args)
         {
-            Console.WriteLine("must have 6 arguments");
-            return;
-        }
-
-        float[,] A = new float[2, 2];
-        float[] b = new float[2];
-
-        for (int i = 0; i < 2; i++)
-        {
-            for (int j = 0; j < 2; j++)
+            if (args.Length != 6)
             {
-                A[i, j] = float.Parse(args[i * 2 + j], CultureInfo.InvariantCulture);
+                Console.WriteLine("must have 6 arguments");
+                return;
             }
-        }
 
-        for (int i = 0; i < 2; i++)
-        {
-            b[i] = float.Parse(args[4 + i], CultureInfo.InvariantCulture);
-        }
+            float[,] A = new float[2, 2];
+            float[] b = new float[2];
 
-        float[] result = new float[2];
-        for (int i = 0; i < 2; i++)
-        {
-            for (int j = 0; j < 2; j++)
+            for (int i = 0; i < 2; i++)
             {
-                result[i] += A[i, j] * b[j];
+                for (int j = 0; j < 2; j++)
+                {
+                    A[i, j] = float.Parse(args[i * 2 + j], CultureInfo.InvariantCulture);
+                }
             }
-        }
 
-        // Print the result
-        foreach (float value in result)
-        {
-            Console.WriteLine(value);
+            for (int i = 0; i < 2; i++)
+            {
+                b[i] = float.Parse(args[4 + i], CultureInfo.InvariantCulture);
+            }
+
+            float[] result = new float[2];
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    result[i] += A[i, j] * b[j];
+                }
+            }
+
+            // Print the result
+            foreach (float value in result)
+            {
+                Console.WriteLine(value);
+            }
         }
     }
 }
