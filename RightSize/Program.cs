@@ -1,19 +1,22 @@
 ﻿using System;
 
-class Program
+namespace RightSize
 {
-    static void Main(string[] args)
+    class Program
     {
-        foreach (string argumento in args)
+        static void Main(string[] args)
         {
-            if (argumento.Length > 6)
+            foreach (string argumento in args)
             {
-                return;
-            }
+                if (argumento.Length > 6)
+                {
+                    return;
+                }
 
-            if (argumento.Length > 3)
-            {
-                Console.WriteLine(argumento);
+                if (argumento.Length > 3)
+                {
+                    Console.WriteLine(argumento);
+                }
             }
         }
     }
